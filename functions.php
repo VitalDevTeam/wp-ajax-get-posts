@@ -38,7 +38,7 @@ function vital_ajax_get_posts() {
         wp_send_json($posts);
     }
 
-    die();
+    wp_die();
 }
 add_action('wp_ajax_nopriv_vital_ajax_get_posts', 'vital_ajax_get_posts');
 add_action('wp_ajax_vital_ajax_get_posts', 'vital_ajax_get_posts');
