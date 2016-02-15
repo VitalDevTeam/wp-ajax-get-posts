@@ -21,8 +21,8 @@ jQuery(document).ready(function ($) {
             success: function(posts) {
                 console.log(posts);
             },
-            error: function() {
-                console.log('Error!');
+            error: function(response) {
+                console.log(response);
             }
 
         });
