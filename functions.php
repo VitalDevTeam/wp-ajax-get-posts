@@ -44,6 +44,9 @@ function vital_ajax_get_posts() {
         }
 
         wp_send_json($posts);
+
+    } else {
+        return wp_send_json_error('No posts were returned.');
     }
 
     wp_die();
