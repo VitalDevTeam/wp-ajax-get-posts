@@ -2,9 +2,7 @@ jQuery(document).ready(function ($) {
 
     /**
      * Get posts
-     * @param  {string} post_id    Post ID
-     * @param  {string} successUrl Relative URL for success pushState
-     * @return {[type]}            [description]
+     * @param  {object} args    Object of get_post arguments
      */
     function ajaxGetPosts() {
 
