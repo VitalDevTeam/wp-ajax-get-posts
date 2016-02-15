@@ -32,6 +32,7 @@ jQuery(document).ready(function ($) {
     // Example usage
     ajaxGetPosts({
         post_type: 'post',
-        posts_per_page: -1
+        posts_per_page: -1,
+        return_meta: true
     });
 });

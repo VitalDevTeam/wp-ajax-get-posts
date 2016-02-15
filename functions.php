@@ -37,10 +37,13 @@ function vital_ajax_get_posts() {
 
     if ($posts) {
 
-        // Get all (or some) post meta and add to the object
-        foreach ($posts as $post) {
-            $post_meta = get_post_meta($post->ID);
-            $post->post_meta = $post_meta;
+        // Get all post meta and add to the object if
+        // the return_meta option is true
+        if ($args['return_meta'] === 'true') {
+            foreach ($posts as $post) {
+                $post_meta = get_post_meta($post->ID);
+                $post->post_meta = $post_meta;
+            }
         }
 
         wp_send_json($posts);
