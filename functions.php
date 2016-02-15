@@ -29,12 +29,20 @@ add_action('wp_enqueue_scripts', 'vital_enqueuer');
 function vital_ajax_get_posts() {
     $args = $_POST['args'];
 
+    // Get posts
     $posts = get_posts(array(
         'posts_per_page'  => $args['posts_per_page'],
         'post_type'       => $args['post_type'],
     ));
 
     if ($posts) {
+
+        // Get all (or some) post meta and add to the object
+        foreach ($posts as $post) {
+            $post_meta = get_post_meta($post->ID);
+            $post->post_meta = $post_meta;
+        }
+
         wp_send_json($posts);
     }
 
