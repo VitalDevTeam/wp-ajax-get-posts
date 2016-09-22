@@ -4,11 +4,11 @@ jQuery(document).ready(function ($) {
      * Get posts
      * @param  {object} args    Object of get_post arguments
      */
-    function ajaxGetPosts() {
+    function ajaxGetPosts(args) {
 
         $.ajax({
             url: SiteInfo.ajax_url,
-            type: 'post',
+            type: 'GET',
             data: {
                 action: 'vital_ajax_get_posts',
                 args: args

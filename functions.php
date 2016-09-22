@@ -27,7 +27,7 @@ add_action('wp_enqueue_scripts', 'vital_enqueuer');
  * @return object Posts
  */
 function vital_ajax_get_posts() {
-    $args = $_POST['args'];
+    $args = $_GET['args'];
 
     // Get posts
     $posts = get_posts(array(
